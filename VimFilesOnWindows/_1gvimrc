@@ -1,10 +1,7 @@
-set go=
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
-
-set guifont=Consolas:h15
+set go=
+"set guifont=Consolas:h15
+set guifont=Lucida\ Console:h16
 set nu
 color desert
 set tabstop=2
@@ -12,3 +9,4 @@ set cursorline
 set cursorcolumn
 set autoindent
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+set laststatus=2
