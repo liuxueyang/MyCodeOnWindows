@@ -1,0 +1,47 @@
+TITLE Program Name							(FINENAME.asm)
+
+; Description	:
+; Author			: snowsun
+; Create Date	:
+
+INCLUDE Irvine32.inc
+KEY = 239
+BUFMAX = 128
+.data
+	; insert data here
+	sPrompt BYTE "Enter the plain text: ", 0
+	sEncrypt BYTE "Cipher text: ", 0
+	sDecrypt BYTE "Decrypted: ", 0
+	buffer BYTE BUFMAX+1 DUP(0)
+	bufSize DWORD ?
+
+.code
+main PROC
+	; insert code here
+	call InputTheString
+
+	exit
+main ENDP
+
+	; insert other subroutines here
+
+; Prompts user for a plaintext string. Saves
+; the string and its length
+; Receives: nothing
+; Retures: nothing
+InputTheString PROC
+	pushad
+	mov edx, OFFSET sPrompt
+	call WriteString
+
+	mov ecx, BUFMAX
+	mov edx, OFFSET buffer
+	call ReadString
+	mov bufSize, eax
+	call Crlf
+	popad
+	ret
+InputTheString ENDP
+
+
+END main
